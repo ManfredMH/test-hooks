@@ -1,5 +1,3 @@
-import { createContext } from "react";
-
 export const initialState = { user: { name: '', lastName: '', company: '' } };
 
 export const reducer = (state = initialState, action) => {
@@ -20,5 +18,3 @@ export const reducer = (state = initialState, action) => {
       return state;
   }
 }
-
-export const Context = createContext();

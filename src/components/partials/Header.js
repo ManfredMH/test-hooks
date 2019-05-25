@@ -1,19 +1,18 @@
-import React, { useContext }  from 'react';
+import React from 'react';
 import {
   Navbar,
   NavbarBrand,
   NavLink} from 'reactstrap';
-import { Context } from '../../store';
+import { getuserInformation } from '../../context/actions/SessionStore';
 
 export const Header = () => {
-  const { store } = useContext(Context);
-
+  const { name } = getuserInformation()
   return (
     <div>
       <Navbar color="light" light expand="md">
         <NavbarBrand href="/">Test Hooks</NavbarBrand>
-        { store.user.name ?
-            <NavbarBrand>Bienvenido {store.user.name}</NavbarBrand>
+        { name ?
+            <NavbarBrand>Bienvenido {name}</NavbarBrand>
           :
             <NavLink href="/sign-in">Sign In</NavLink>
         }
